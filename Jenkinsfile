@@ -9,8 +9,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                // Pull the latest code from the repository
-                checkout scm
+              checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mokshadadeshmukh15/cicd-vite.git']])
             }
         }
 
